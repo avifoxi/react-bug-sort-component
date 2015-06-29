@@ -57,7 +57,7 @@ var BugTable = React.createClass({
   getInitialState: function(){
   	return {
   		bugs: [],
-  		groupBy: 'admins'
+  		groupBy: 'admin_id'
   	};
   },
   componentDidMount: function(){

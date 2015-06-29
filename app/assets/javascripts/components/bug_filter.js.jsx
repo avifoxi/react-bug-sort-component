@@ -54,7 +54,7 @@ var BugFilter = React.createClass({
 				    {selectA}
 				  </select>
 				  <hr/>
-				  <label for="">Limit to:</label>
+				  <label for="">Filter for:</label>
 	      	<br/>
 	      	<select>
 				    {selectB}
