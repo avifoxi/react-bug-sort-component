@@ -4,10 +4,13 @@ var BugTable = React.createClass({
   	this.setState({groupBy: e.target.value});
   },
   arrangeBugRows: function(){
-  	
+  	var self = this;
+  	return _.sortBy(self.state.bugs, function(b){ 
+  		return b[self.state.groupBy];
+  	});
   },
   render: function() {
-    var bugRows = this.state.bugs.map(function(b){
+    var bugRows = this.arrangeBugRows().map(function(b){
     	return (
     		<tr>
 					<td>
@@ -27,8 +30,8 @@ var BugTable = React.createClass({
     	<div>
     		<hr/>
 	    	<select onChange={this.changeGroupBy}>
-	    		<option value='admins'>admins</option>
-	    		<option value='projects'>projects</option>
+	    		<option value='admin_id'>admins</option>
+	    		<option value='project_id'>projects</option>
 	    		<option value='status'>status</option>
 	    	</select>
 	    	<hr/>
