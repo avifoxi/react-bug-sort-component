@@ -3,8 +3,7 @@ class PublicController < ApplicationController
 	end
 
 	def bugs
-		render json: {
-			bugs: [
+		render json: [
 				{
 					admin_id: 1,
 					status: 'Open',
@@ -50,7 +49,6 @@ class PublicController < ApplicationController
 					status: 'Open',
 					project_id: 3
 				}
-			]
-		}
+		].to_json
 	end
 end
